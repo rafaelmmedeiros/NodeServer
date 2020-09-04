@@ -1,0 +1,8 @@
+-- STARTING
+npm init
+
+3ª
+npm install express
+
+-- Nodemon RUN
+npx nodemon app.js
