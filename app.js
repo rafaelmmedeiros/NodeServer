@@ -1,18 +1,9 @@
-let express = require('express')
-
-let app = express()
-let port = 3000
-
-app.listen(port, function(){
-    console.log('Server is Running!!! And isn´t burning!! port:', port)
-})
+let app = require('./config/server')
 
 app.get('/',function(req, res) {
-    let page = '<html><body><h1>Initial Page from Web System Development</h1></body></html>'
-    res.send(page)
+    res.render('home/home')
 })
 
-app.get('/notes',function(req, res) {
-    let page = '<html><body><h1>Avaliations Page12</h1></body></html>'
-    res.send(page)
+app.get('/notas', function(req, res) {
+    res.render('notas/notas')
 })

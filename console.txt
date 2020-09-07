@@ -3,6 +3,7 @@ npm init
 
 3ª
 npm install express
+npm install ejs
 
 -- Nodemon RUN
 npx nodemon app.js
