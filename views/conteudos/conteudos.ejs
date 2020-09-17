@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8" />
+        <title>Conteudos</title>
+    </head>
+    <body>
+        <h1>Conteúdos Programáticos</h1>
+        <table>
+            <tr>
+                <td>Semana <br> Data</td>
+                <td>Conteúdo Planejado</td>
+                <td>Metodologia de ensino e recursos</td>
+            </tr>
+            <% for(let i=0; i<conteudos.length; i++) {%>
+                <% var data = (conteudos[i].aula_data) %>
+            <tr>
+                <td><%= conteudos[i].idconteudo %><br><%= data.toLocaleDateString() %></td>
+                <td><%= conteudos[i].descricao %></td>
+                <td><%= conteudos[i].metodo %></td>
+            </tr>
+            <% } %>
+        </table>
+    </body>
+</html>

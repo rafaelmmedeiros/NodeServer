@@ -23,3 +23,12 @@ app.get("/professores", function (req, res) {
     res.render("professores/professores", { professores: result });
   });
 });
+
+app.get("/conteudos", function (req, res) {
+  let sql = "select * from conteudos";
+
+  dbConnection.query(sql, function (error, result) {
+    //res.send(result);
+    res.render("conteudos/conteudos", { conteudos: result });
+  });
+});
