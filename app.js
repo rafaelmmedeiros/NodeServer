@@ -1,34 +1,14 @@
-let app = require("./config/server");
-let dbConnection = require("./config/dbConnection");
+const app = require("./config/server");
 
-app.get("/", function (req, res) {
-  res.render("home/home");
-});
+// ROUTES
+const rotaHome = require("./app/routes/home");
+const rotaNotas = require("./app/routes/notas");
+const rotaProfessores = require("./app/routes/professores");
+const rotaConteudos = require("./app/routes/conteudos");
 
-app.get("/notas", function (req, res) {
-  let sql = "select * from estudantes";
+rotaHome(app);
+rotaNotas(app);
+rotaProfessores(app);
+rotaConteudos(app);
 
-  dbConnection.query(sql, function (error, result) {
-    //res.send(result);
-    //console.log(result);
-    res.render("notas/notas", { notas: result });
-  });
-});
-
-app.get("/professores", function (req, res) {
-  let sql = "select * from professores";
-
-  dbConnection.query(sql, function (error, result) {
-    //res.send(result);
-    res.render("professores/professores", { professores: result });
-  });
-});
-
-app.get("/conteudos", function (req, res) {
-  let sql = "select * from conteudos";
-
-  dbConnection.query(sql, function (error, result) {
-    //res.send(result);
-    res.render("conteudos/conteudos", { conteudos: result });
-  });
-});
+//
