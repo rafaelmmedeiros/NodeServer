@@ -1,4 +1,4 @@
-const getNotas = require("../models/notasModels");
+const { getNotas } = require("../models/notasModels");
 
 module.exports = function (app) {
   app.get("/notas", function (req, res) {
