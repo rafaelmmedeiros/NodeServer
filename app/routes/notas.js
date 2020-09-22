@@ -1,12 +1,8 @@
-const dbConnection = require("../../config/dbConnection");
+const getNotas = require("../models/notasModels");
 
 module.exports = function (app) {
   app.get("/notas", function (req, res) {
-    let sql = "select * from estudantes";
-
-    dbConnection.query(sql, function (error, result) {
-      //res.send(result);
-      //console.log(result);
+    getNotas(function (error, result) {
       res.render("notas/notas", { notas: result });
     });
   });
