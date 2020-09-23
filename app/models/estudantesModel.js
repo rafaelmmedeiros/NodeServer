@@ -1,6 +1,6 @@
 const dbConnection = require("../../config/dbConnection");
 
-const getNotas = (callback) => {
+const getEstudantes = (callback) => {
   let sql = "select * from estudantes";
   let results = dbConnection().query(sql, callback);
   return results;
@@ -15,5 +15,5 @@ const getNota = (callback) => {
 
 module.exports = {
   getNota,
-  getNotas,
+  getEstudantes,
 };
