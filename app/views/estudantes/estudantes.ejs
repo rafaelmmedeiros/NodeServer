@@ -17,8 +17,15 @@
                 <td><%= estudantes[i].idestudante %></td>
                 <td><%= estudantes[i].nome %></td>
                 <td><%= estudantes[i].nota %></td>
+                <td>
+                    <form
+                        action="/estudante/delete/<%= estudantes[i].idestudante %>" method="post">
+                        <button type="submit">Deletar</button>
+                    </form>
+                </td>
             </tr>
             <% } %>
         </table>
     </body>
 </html>
+

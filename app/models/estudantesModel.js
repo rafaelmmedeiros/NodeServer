@@ -18,8 +18,15 @@ const saveEstudante = (estudante, callback) => {
   return results;
 };
 
+const deleteEstudante = (id, callback) => {
+  let sql = "DELETE from estudantes where idestudante=" + id + ";";
+  let results = dbConnection().query(sql, callback);
+  return results;
+};
+
 module.exports = {
   getNota,
   getEstudantes,
   saveEstudante,
+  deleteEstudante,
 };
