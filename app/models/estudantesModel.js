@@ -13,7 +13,13 @@ const getNota = (callback) => {
   return results;
 };
 
+const saveEstudante = (estudante, callback) => {
+  let results = dbConnection().query("insert into estudantes set ?", estudante, callback);
+  return results;
+};
+
 module.exports = {
   getNota,
   getEstudantes,
+  saveEstudante,
 };
